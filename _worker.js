@@ -101,7 +101,7 @@ export default {
 			else if(url.searchParams.has('surge')) 追加UA = 'surge';
 			
 			const 请求订阅响应内容 = await getSUB(urls, 追加UA, userAgentHeader);
-			console.log(请求订阅响应内容);
+			// console.log(请求订阅响应内容);
 			req_data += 请求订阅响应内容[0].join('\n');
 			订阅转换URL += "|" + 请求订阅响应内容[1];
 
@@ -286,7 +286,7 @@ async function proxyURL(proxyURL, url) {
 
 	// 解析目标 URL
 	let parsedURL = new URL(fullURL);
-	console.log(parsedURL);
+	// console.log(parsedURL);
 	// 提取并可能修改 URL 组件
 	let URLProtocol = parsedURL.protocol.slice(0, -1) || 'https';
 	let URLHostname = parsedURL.hostname;
@@ -354,7 +354,7 @@ async function getSUB(api, 追加UA, userAgentHeader) {
 			};
 		});
 	
-		console.log(modifiedResponses); // 输出修改后的响应数组
+		// console.log(modifiedResponses); // 输出修改后的响应数组
 	
 		for (const response of modifiedResponses) {
 			// 检查响应状态是否为'fulfilled'
